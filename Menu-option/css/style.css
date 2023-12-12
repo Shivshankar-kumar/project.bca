@@ -1,0 +1,197 @@
+
+/* -----------css on header----------------- */
+body{
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+/*--------------------- css on main-content---------------------- */
+#main-content{
+    padding: 0 auto 0 10px;
+    min-height: 600px;
+    width: calc(100% - 150px);
+}
+#main-content h2{
+    color: black;
+    text-align: center;
+    font-weight: 600;
+}
+#main-content table{
+    width: 80vw;
+    background-color: #555;
+    margin-left: 145px;
+}
+
+/* -----------------css on table which is view for faculty---------------- */
+#main-content table th{
+    color: #fff;
+    background-color: #333;
+    text-transform: uppercase;
+}
+#main-content table th:last-child{
+    width: 130px;
+}
+#main-content table td{
+    background-color: #fff;
+    text-align: center;
+}
+#main-content table td a{
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 7px 7px;
+    color: #fff;
+    background-color: #0044ffb6;
+    text-decoration: none;
+    justify-content: center;
+    border-radius: 3px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#main-content table td a:nth-child(2){
+    background-color: #e74c3c;
+    margin-top: 10px;
+}
+#main-content table td a:nth-child(3){
+    background-color: springgreen;
+    margin: 10px 0;
+    font-style: oblique;
+    font-family: cursive;
+    }
+    #main-content table td a:nth-child(1):hover{
+        background-color: yellow;
+        color: #e74c3c;
+    }
+    #main-content table td a:nth-child(2):hover{
+        background-color: #ddd;
+        color: #000000;
+    }
+    #main-content table td a:nth-child(3):hover{
+        background-color: #000000;
+    }
+/* ----------css on add, delete, upadte section------------------ */
+#main-content .post-form{
+    width: 50%;
+    padding: 25px;
+    margin-left: 38%;
+    background-color: #80808088;
+    border-radius: 10px;
+}
+
+#main-content .post-form .form-group{
+    margin: 0 0 15px;
+}
+
+#main-content .post-form .form-group label{
+    width: 30%;
+    display: inline-block;
+    font-weight: 600;
+}
+#main-content .post-form .form-group input,
+#main-content .post-form .form-group select{
+    font-size: 16px;
+    width: 66%;
+    display: inline-block;
+    padding: 5px;
+    margin: 0;
+}
+#main-content .post-form .form-group select{
+    width: 69%;
+}
+
+#main-content .post-form .submit{
+    font-size: 17px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    color: #fff;
+    background-color:#e67e22;
+    border: none;
+    border-radius: 5px;
+    margin: 0 0 0 30%;
+    cursor: pointer;
+    /* transition: all 0.5s; */
+}
+
+#main-content .post-form .submit:hover{
+    box-shadow: 0 0 5px #555;
+    background-color: #fcfafa; 
+    color: #000000;
+}
+
+/* CSS on AboutUs */
+#page-container {
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 20px;
+    color: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #555;
+    border-radius: 30px;
+    border: 2px #0073ff solid;
+}
+#sub-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+#intro {
+    border: 1px solid #ddd;
+    padding: 10px;
+    flex: 0 0 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#intro img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------css on student addmarks section-------- */
+#addmarks{
+    margin: 7% 25%;
+    width: 55%;
+    border: none;
+    border-radius: 30px;
+    background: #fff;
+    padding: 2px;
+}
+#main-content .post-form .form-group .id{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+#main-content .post-form .form-group .inp-1{
+    font-size: 18px;
+    height: 40px;
+    width: 35%;
+    border-radius: 10px;
+    border: 2px solid red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#main-content .post-form .form-group section{
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0.1cap;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: #fff;
+    background-color: #e74c3c;
+    border-radius: 20px;
+    margin-bottom: 5%;
+}
+#main-content .post-form .form-group .input-box{
+    font-size: 18px;
+    height: 35px;
+    width: 50%;
+    border: 2px solid #0000ff43;
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+#main-content table .tbl{
+    background-color: #1dbcb9;
+    text-align: center;
+}

@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.header{
+    background: #262626;
+    min-height: 10vh;
+    margin-top: 0;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    align-items:center;
+    padding-inline: 10px;
+    margin-left: 150px;
+}
+    #right-corner{
+        display: flex;
+        align-items:center;
+    }
+    #right-corner p{
+        font-style: italic;
+        font-family: cursive;
+    }
+    #dept{
+        display: flex;
+        color: #fff;
+    }
+    a{
+        text-decoration: none;
+    }
+    .container{
+        margin-left: 150px;
+    }
+    #navigation{
+        background: #ff9d00;
+        width: 150px;
+        position: fixed;
+        height: 100vh;
+        border-right: 1px solid black;
+        border-top: 2px solid green;
+    }
+    .nav-aside{
+        background: #0492b6;
+    }
+    #navigation ul li{
+        display: inline-block;
+        display: flex;
+        position: relative;
+        margin: 0;
+    }
+    #navigation ul li a{
+        color: #fff;
+        font-size: 23px;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+    #navigation ul li:nth-child(1){
+        margin-bottom: 20px;
+    }
+    #navigation ul li:hover{
+        background: black;
+        overflow: hidden;
+        transform: translateY(-3px);
+        cursor: pointer;
+    }
+    /* ------------CSS on studentMarks.php------------ */
+    table{
+        border: 2px solid blue;
+        margin: 10% 30%;
+        width: 50vw;
+    }
+    table .row-1{
+        background: #262626;
+        font-size: 18px;
+        font-style: italic;
+        border-radius: 10px;
+        color: #fff;
+    }
+    table .row-2{
+        background: blue;
+        font-weight: 600;
+        color: #fff;
+    }
+    table .bottom-row{
+        background: #76423493;
+    }
+    table tr td a{
+        color: #fff;
+        font-size: 18px;
+        letter-spacing: 0.1cap;
+    }
+    td{
+        text-align: center;
+        border-bottom: 2px solid gray;
+    }
