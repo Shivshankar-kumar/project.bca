@@ -1,223 +1,101 @@
-Use bcastudent;
-CREATE table student (
-sid int(11) auto_increment,
-Name varchar(40) NOT NULL,
-Mobile varchar(10) NOT NULL,
-Age int(3) NOT NULL,
- Address varchar(100) NOT NULL,
- Course int(10),
- primary key (sid)
-);
-Use bcastudent;
-CREATE TABLE studentusername (
-username varchar(50),
-password varchar(50)
-);
-INSERT into studentusername VALUES("shivshankar@gmail.com","Shiv@123456789");
-INSERT into studentusername VALUES("ritik@gmail.com","123456789");
+-- Create the database
+CREATE DATABASE IF NOT EXISTS BCASTUDENT;
 
-Use bcastudent;
+USE bcastudent;
+
+-- Table-1: admin
+CREATE TABLE admin (
+    aid INT(11),
+    username VARCHAR(30),
+    password VARCHAR(15),
+    PRIMARY KEY (aid)
+);
+
+-- Dumping data into `admin` table
+INSERT INTO admin VALUES(1, "admin", "admin1");
+
+-- Table-2: facultyusername
 CREATE TABLE facultyusername (
-username varchar(30),
-password varchar(15)
-);
-INSERT into facultyusername VALUES("lab","123");
-use bcastudent;
-INSERT into facultyusername VALUES("ramesh3309","1234");
-
-
-Use bcastudent;
-CREATE table studentmarks (
-sid int(11),
-java int(2) NOT NULL,
-webdevelopment int(2) NOT NULL,
-cloudcomputing int(2) NOT NULL,
- ood int(2) NOT NULL,
- lab1 int(2) NOT NULL,
- lab2 int(2) NOT NULL,
- primary key (sid)
+    fid INT(11) AUTO_INCREMENT,
+    username VARCHAR(30),
+    password VARCHAR(15),
+    PRIMARY KEY(fid)
 );
 
-use shop_db;
-CREATE TABLE `admins` (
-  `id` int(100) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- Table-3: student2
+CREATE TABLE student2 (
+    sid INT(11) AUTO_INCREMENT,
+    Name VARCHAR(40) NOT NULL,
+    Email VARCHAR(30) NOT NULL,
+    Mobile VARCHAR(10) NOT NULL,
+    Course INT(10),
+    Password VARCHAR(30) NOT NULL, 
+    PRIMARY KEY (sid)
+);
 
---
--- Dumping data for table `admins`
---
+-- Table-4: signup
+CREATE TABLE signup (
+    sid INT(11) NOT NULL AUTO_INCREMENT,
+    Name VARCHAR(40) NOT NULL,
+    Email VARCHAR(30) NOT NULL,
+    Mobile VARCHAR(10) NOT NULL,
+    Course INT(10) NOT NULL,
+    Password VARCHAR(30) NOT NULL, 
+    InsertedDateTime DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (sid)
+);
 
-INSERT INTO `admins` (`id`, `name`, `password`) VALUES
-(1, 'admin', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2');
+-- Table-5: studentmarks
+CREATE TABLE studentmarks (
+    sid INT(11),
+    java INT(2) NOT NULL,
+    webdevelopment INT(2) NOT NULL,
+    cloudcomputing INT(2) NOT NULL,
+    ood INT(2) NOT NULL,
+    lab1 INT(2) NOT NULL,
+    lab2 INT(2) NOT NULL,
+    PRIMARY KEY (sid)
+);
 
--- --------------------------------------------------------
+-- Table-6: feedback
+CREATE TABLE feedback (
+    id INT(11) AUTO_INCREMENT,
+    Name VARCHAR(40),
+    Mobile VARCHAR(10),
+    Email VARCHAR(40),
+    Message VARCHAR(100),
+    InsertedDateTime DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(id)
+);
 
---
--- Table structure for table `cart`
---
+-- Table-7: admission_form
+CREATE TABLE admission_form (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    Name VARCHAR(40) NOT NULL,
+    Email VARCHAR(40) NOT NULL,
+    Mobile VARCHAR(10) NOT NULL,
+    Course VARCHAR(40) NOT NULL,
+    Address VARCHAR(50) NOT NULL,
+    Gender VARCHAR(6) NOT NULL,
+    Dob DATE,
+    PRIMARY KEY(id)
+);
 
-CREATE TABLE `cart` (
-  `id` int(100) NOT NULL,
-  `user_id` int(100) NOT NULL,
-  `pid` int(100) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `price` int(10) NOT NULL,
-  `quantity` int(10) NOT NULL,
-  `image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- Table-8: complain_box
+CREATE TABLE complain_box (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    Name VARCHAR(40) NOT NULL,
+    Mobile VARCHAR(10) NOT NULL,
+    Email VARCHAR(40) NOT NULL,
+    Course VARCHAR(40) NOT NULL,
+    Message VARCHAR(100) NOT NULL,
+    InsertedDateTime DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(id)
+);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `messages`
---
-
-CREATE TABLE `messages` (
-  `id` int(100) NOT NULL,
-  `user_id` int(100) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `number` varchar(12) NOT NULL,
-  `message` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `orders`
---
-
-CREATE TABLE `orders` (
-  `id` int(100) NOT NULL,
-  `user_id` int(100) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `number` varchar(10) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `method` varchar(50) NOT NULL,
-  `address` varchar(500) NOT NULL,
-  `total_products` varchar(1000) NOT NULL,
-  `total_price` int(100) NOT NULL,
-  `placed_on` date NOT NULL DEFAULT current_timestamp(),
-  `payment_status` varchar(20) NOT NULL DEFAULT 'pending'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `products`
---
-
-CREATE TABLE `products` (
-  `id` int(100) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `details` varchar(500) NOT NULL,
-  `price` int(10) NOT NULL,
-  `image_01` varchar(100) NOT NULL,
-  `image_02` varchar(100) NOT NULL,
-  `image_03` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-use shop_db;
-CREATE TABLE `wishlist` (
-  `id` int(100) NOT NULL,
-  `user_id` int(100) NOT NULL,
-  `pid` int(100) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `price` int(100) NOT NULL,
-  `image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `admins`
---
-ALTER TABLE `admins`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `cart`
---
-ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `messages`
---
-ALTER TABLE `messages`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `wishlist`
---
-ALTER TABLE `wishlist`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `admins`
---
-ALTER TABLE `admins`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `cart`
---
-ALTER TABLE `cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `messages`
---
-ALTER TABLE `messages`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `wishlist`
---
-ALTER TABLE `wishlist`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
-COMMIT;
+-- Table-9: studentclass
+CREATE TABLE studentclass (
+    cid INT(11) AUTO_INCREMENT,
+    coursename VARCHAR(15),
+    PRIMARY KEY(cid)
+);
