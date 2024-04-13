@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: changeBackground 20s infinite;
+}
+
+@keyframes changeBackground {
+    0% { background-image: url('image/Subharti-Uni-750x465.png'); }
+    20% { background-image: url('image/Student image.jpg'); }
+    40% { background-image: url('image/Subharti.jpg'); }
+    60% { background-image: url('image/deptcmputer.jpeg'); }
+    80% { background-image: url('image/auditorium-header.gif'); }
+}
+
+
+        header {
+            background-color: #000080;
+            color: white;
+            text-align: center;
+            padding: 6px;
+        }
+
+        /* ---------About Section----------- */
+
+        .box1 {
+            width: 80%; 
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            background-color: rgba(255, 255, 255, 0.7); 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+            text-align: left; 
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .box1 {
+                width: 90%; 
+                padding: 15px;
+            }
+        }
+
+        /* ---------Contact Section------------- */
+        
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 10px;
+    font-size: 25px;
+}
+.social-icon{
+    margin-top: 30px;
+
+}
+.social-icon a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color:#ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icon a:hover{
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: #ff004f;
+}
+
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+/* ---------- CSS on Signup-------------- */
+
+.signup-box {
+    width: 90%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+    margin: 15px 35%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+
+}
+
+.signup-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup-box input[type="text"],
+.signup-box input[type="email"],
+.signup-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 5, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-box button:hover {
+    background-color: rgba(255, 5, 0, 1);
+}
+
+@media (max-width: 768px) {
+    .signup-box {
+        width: 95%;
+    }
+}

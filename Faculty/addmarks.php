@@ -2,18 +2,37 @@
     <head>
     <title>Student Marks</title>
     <link rel="stylesheet" href="\project.bca\Menu-option\css\style.css">
-    <?php include 'header.php' ?> 
+    <style>
+#main-content .post-form{
+    margin-left: 0;
+}
+    </style> 
 </head>
+<?php include 'fdashboard.php'; ?>
+<!-- this php code is written for session if, user wants to access without login then this will redirect to login page -->
+<?php 
+    //Establish a connection between php code and database
+    $conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connection failed".mysqli_connect_error());
+    error_reporting(0);
+    $flt_profile=$_SESSION['user_name'];
+
+    if($flt_profile == true){
+
+    }else{
+        header('Location: http://localhost/project.bca/faculty/facultyloginform.php');
+    }
+    ?>
+
 <body>
     <?php //get student id from URL bar
         $stu_id=$_GET['id'];
         ?>
 <div id="main-content">
-    <form class="post-form" name="myform" method="post" action="\project.bca\Database\addMarksDB.php" id="addmarks">
+    <form class="post-form" name="myform" method="post" action="\project.bca\faculty\addmarksdb.php" id="addmarks">
         <div class="form-group">
         <section>Add Marks of Student</section>
         <label class="id">Student Id</label>
-        <input type="text" name="sid" value="<?php echo "$stu_id"; ?>" maxlength="2" class="inp-1" autocomplete="off" required>
+        <input type="text" name="sid" value="<?php echo "$stu_id"; ?>" maxlength="2" class="inp-1" required>
         </div>
     <div class="form-group">
         <label>Java Programming</label>

@@ -2,7 +2,7 @@
     <head>
         <title>View Data</title>
         <link rel="stylesheet" href="\project.bca\Menu-option\css\style.css">
-    <?php include 'header.php' ?>
+        <?php include 'fdashboard.php'; ?>
 </head>
 <body>
     <?php 
@@ -27,7 +27,7 @@
 if(mysqli_num_rows($result)>0)
 {
     ?>
-    <table>
+    <table cellpadding="1px">
         <thead>
         <th>Id</th>
         <th>Name</th>
@@ -49,8 +49,6 @@ if(mysqli_num_rows($result)>0)
                 <td><?php echo $row['coursename'] ?></td>
                 <td><?php echo $row['Password'] ?></td>
                <td>
-                <a href='edit.php?id= <?php echo $row['sid']; ?>'>Edit</a>
-                <a href='delete.php?id= <?php echo $row['sid']; ?>'>Delete</a>
                 <a href='addMarks.php?id= <?php echo $row['sid']; ?>'>Add Marks</a>
                 </td>
             </tr>

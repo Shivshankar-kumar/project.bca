@@ -40,9 +40,7 @@
         border-right: 1px solid black;
         border-top: 2px solid green;
     }
-    .nav-aside{
-        background: #0492b6;
-    }
+
     #navigation ul li{
         display: inline-block;
         display: flex;
@@ -51,13 +49,13 @@
     }
     #navigation ul li a{
         color: #fff;
-        font-size: 23px;
+        font-size: 15px;
         width: 100%;
         text-align: center;
         padding: 15px 0;
     }
     #navigation ul li:nth-child(1){
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     #navigation ul li:hover{
         background: black;
@@ -65,6 +63,10 @@
         transform: translateY(-3px);
         cursor: pointer;
     }
+    .nav-aside #menu li a.active {
+        background: #000000;
+        color: #fff;
+      }
     /* ------------CSS on studentMarks.php------------ */
     table{
         border: 2px solid blue;

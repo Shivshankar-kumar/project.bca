@@ -17,7 +17,7 @@ include 'header.php';
     $stu_id=$_GET['id'];
 
     //fetch data from tables
-    $sql="SELECT * FROM student WHERE sid= {$stu_id} ";
+    $sql="SELECT * FROM student2 WHERE sid= {$stu_id} ";
     
     $result=mysqli_query($conn,$sql) or die("Query failed".mysqli_connect_error());
     
@@ -30,17 +30,15 @@ include 'header.php';
           <input type="hidden" name="sid" value="<?php echo $row['sid']; ?>">
           <input type="text" name="name" value="<?php echo $row['Name']; ?>" maxlength="40" required>
       </div>
+
+      <div class="form-group">
+          <label>Email</label>
+          <input type="text" name="email" value="<?php echo $row['Email']; ?>" maxlength="30" required>
+      </div>
+
       <div class="form-group">
           <label>Mobile</label>
           <input type="text" name="mobile" value="<?php echo $row['Mobile']; ?>" maxlength="10" required>
-      </div>
-      <div class="form-group">
-          <label>Age</label>
-          <input type="text" name="age" value="<?php echo $row['Age']; ?>" maxlength="3" required>
-      </div>
-      <div class="form-group">
-          <label>Address</label>
-          <input type="text" name="address" value="<?php echo $row['Address']; ?>"maxlength="100" required>
       </div>
       <div class="form-group">
         <label>Course</label>
@@ -63,6 +61,10 @@ include 'header.php';
             echo '</Select>';
         }
         ?>
+      </div>
+      <div class="form-group">
+          <label>Password</label>
+          <input type="text" name="password" value="<?php echo $row['Password']; ?>" maxlength="30" required>
       </div>
       <input class="submit" type="submit" value="Update">
     </form>

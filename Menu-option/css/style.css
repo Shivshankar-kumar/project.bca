@@ -17,6 +17,7 @@ body{
     font-weight: 600;
 }
 #main-content table{
+    margin-top: 0;
     width: 80vw;
     background-color: #555;
     margin-left: 145px;
@@ -55,8 +56,7 @@ body{
 #main-content table td a:nth-child(3){
     background-color: springgreen;
     margin: 10px 0;
-    font-style: oblique;
-    font-family: cursive;
+    
     }
     #main-content table td a:nth-child(1):hover{
         background-color: yellow;
@@ -150,7 +150,7 @@ body{
 
 /* ---------css on student addmarks section-------- */
 #addmarks{
-    margin: 7% 25%;
+    margin-left: 0; 
     width: 55%;
     border: none;
     border-radius: 30px;
@@ -192,6 +192,6 @@ body{
     overflow: hidden;
 }
 #main-content table .tbl{
-    background-color: #1dbcb9;
+    background-color: #fff;
     text-align: center;
 }

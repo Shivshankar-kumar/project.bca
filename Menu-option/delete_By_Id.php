@@ -26,7 +26,7 @@ if(isset($_POST['showbtn'])){
     $stu_id=$_POST['sid'];
  
 //Query for sql
-$sql="SELECT * FROM student WHERE sid = {$stu_id} ";
+$sql="SELECT * FROM student2 WHERE sid = {$stu_id} ";
 
 $result=mysqli_query($conn1,$sql) or die("Query failed..!");
 if(mysqli_num_rows($result) > 0){
@@ -36,19 +36,15 @@ if(mysqli_num_rows($result) > 0){
         <div class="form-group">
             <label for="">Name</label>
             <input type="hidden" name="sid"  value="<?php echo $row['sid']; ?>" />
-            <input type="text" name="name" value="<?php echo $row['Name']; ?>" maxlength="40" />
+            <input type="text" name="name" value="<?php echo $row['Name']; ?>" maxlength="40" disabled>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" value="<?php echo $row['Email']; ?>" maxlength="30" required disabled>
         </div>
         <div class="form-group">
             <label>Mobile</label>
-            <input type="text" name="mobile" value="<?php echo $row['Mobile']; ?>" maxlength="10" />
-        </div>
-        <div class="form-group">
-        <label>Age</label>
-        <input type="text" name="age" value="<?php echo $row['Age']; ?>" maxlength="3"/>
-        </div>
-        <div class="form-group">
-            <label>Address</label>
-            <input type="text" name="address" value="<?php echo $row['Address']; ?>" maxlength="100" />
+            <input type="text" name="mobile" value="<?php echo $row['Mobile']; ?>" maxlength="10" disabled>
         </div>
         <div class="form-group">
         <?php    
@@ -58,7 +54,7 @@ if(mysqli_num_rows($result) > 0){
         <label>Course</label>
         <?php
         if(mysqli_num_rows($result1) > 0){
-            echo '<select name="course">';
+            echo '<select name="course" disabled>';
             while($row1=mysqli_fetch_assoc($result1)){
                 if($row['Course']==$row1['cid']){
                     $select="selected";
@@ -71,7 +67,11 @@ if(mysqli_num_rows($result) > 0){
         }
         ?>
         </div>
-    <input class="submit" type="submit" value="DELETE"  />
+        <div class="form-group">
+            <label>Password</label>
+            <input type="text" name="password" value="<?php echo $row['Password']; ?>" maxlength="30" required disabled>
+        </div>
+    <input class="submit" type="submit" value="DELETE">
     </form>
     <?php }
 }

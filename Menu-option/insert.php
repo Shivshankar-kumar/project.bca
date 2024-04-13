@@ -14,18 +14,12 @@
     </div>
 
     <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" value="" maxlength="30" required>
+    </div>
+    <div class="form-group">
         <label>Mobile</label>
         <input type="text" name="mobile" value="" maxlength="10" required>
-    </div>
-
-    <div class="form-group">
-        <label>Age</label>
-        <input type="text" name="age" value="" maxlength="3" required>
-    </div>
-
-    <div class="form-group">
-        <label>Address</label>
-        <input type="text" name="address" value="" maxlength="100" required>
     </div>
     <div class="form-group">
         <label>Course</label>
@@ -50,6 +44,10 @@
             <?php } ?>
         </select>
         </div>
+        <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" value="" maxlength="30" required>
+    </div>
     <input class="submit" type="submit" value="SAVE" name="submitData">
     </form>
     <!-- Javascript for buttton -->

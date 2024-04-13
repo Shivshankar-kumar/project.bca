@@ -16,6 +16,6 @@ $conn=mysqli_connect("localhost", "root", "","BCASTUDENT") or die("Connection fa
 $sql="INSERT INTO studentmarks (sid, java, webdevelopment, cloudcomputing, ood, lab1, lab2) VALUES ('$sid', '$java', '$web', '$cloud', '$ood', '$lab1', '$lab2');";
 mysqli_query($conn, $sql) or die("Query failed". mysqli_connect_error());
 
-    header("Location: http://localhost/project.bca/Menu-option/viewMarks.php");
+    header("Location: http://localhost/project.bca/faculty/viewmarks.php");
 mysqli_close($conn);
 ?>

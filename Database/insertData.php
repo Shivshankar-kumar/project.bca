@@ -10,13 +10,13 @@
 $conn=mysqli_connect("localhost", "root", "","BCASTUDENT") or die("Connection failed!".mysqli_connect_error());
 
 //takes input data from textbox
-echo $name=$_POST['name'];
-echo $mobile=$_POST['mobile'];
-echo $age=$_POST['age'];
-echo $address=$_POST['address'];
-echo $course=$_POST['course'];
+$name=$_POST['name'];
+$email=$_POST['email'];
+$mobile=$_POST['mobile'];
+$course=$_POST['course'];
+$password=$_POST['password'];
 //Query for database
-$sql="INSERT INTO student (Name, Mobile, Age, Address, Course) VALUES('$name', '$mobile', '$age', '$address','$course');";
+$sql="INSERT INTO student2 (Name, Email, Mobile, Course, Password) VALUES('$name', '$email', '$mobile', '$course','$password');";
 mysqli_query($conn,$sql) or die("Query failed".mysqli_connect_error());
 
 //close the connection

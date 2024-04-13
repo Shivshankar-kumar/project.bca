@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>View Data</title>
+        <title>Online Student Information</title>
         <link rel="stylesheet" href="\project.bca\Menu-option\css\style.css">
     <?php include 'header.php' ?>
 </head>
@@ -10,8 +10,8 @@
     //database connectivity
     $conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connection Error! ".mysqli_connect_error());
     //query for JOIN two table
-    $sql=" SELECT s.sid, s.Name, s.Email, s.Mobile, sc.coursename, s.Password 
-    FROM student2 s INNER JOIN studentclass sc
+    $sql=" SELECT s.sid, s.Name, s.Email, s.Mobile, sc.coursename, s.Password, s.InsertedDateTime 
+    FROM signup s INNER JOIN studentclass sc
    ON s.Course = sc.cid; ";
 
     $result=mysqli_query($conn, $sql);
@@ -20,7 +20,7 @@
     }
     ?>
 <div id="main-content">
-    <h2>All Records</h2>
+    <h2>Online Registered Students Information</h2>
 
     <?php
         //to traverse on table in the form of associative array
@@ -35,7 +35,7 @@ if(mysqli_num_rows($result)>0)
         <th>Mobile</th>
         <th>Course</th>
         <th>Password</th>
-        <th>Action</th>
+        <th>Date/Time</th>
         </thead>
         <tbody>
             <?php 
@@ -48,11 +48,7 @@ if(mysqli_num_rows($result)>0)
                 <td><?php echo $row['Mobile'] ?></td>
                 <td><?php echo $row['coursename'] ?></td>
                 <td><?php echo $row['Password'] ?></td>
-               <td>
-                <a href='edit.php?id= <?php echo $row['sid']; ?>'>Edit</a>
-                <a href='delete.php?id= <?php echo $row['sid']; ?>'>Delete</a>
-                <a href='addMarks.php?id= <?php echo $row['sid']; ?>'>Add Marks</a>
-                </td>
+                <td><?php echo $row['InsertedDateTime'] ?></td>
             </tr>
             <?php }
             ?>

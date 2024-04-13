@@ -6,15 +6,15 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty | Login</title>
+    <title>Admin | Login</title>
     <link rel="stylesheet" href="\project.bca\admin\css_sheet\css_on_Student-lgn-page-and-admin-lgn-page.css">
     <link rel="stylesheet" href="\project.bca\indexsyle.css">
 </head>
 <body>
-<?php include '../nav.php'; ?>
-    <form name="login-form" action="#" method="post">
+    <?php include '../nav.php'?>
+    <form name="login-form" action="" method="post">
     <div id="container">
-        <h1>Faculty Login!</h1>
+        <h1>Admin Login!</h1>
         <hr>
         <div id="form-header">
             <h4>Username</h4>
@@ -38,11 +38,11 @@ session_start();
     if(isset($_POST['submit'])){
         $user=$_POST['username'];
         $pwd=$_POST['password'];
-        $sql="SELECT * FROM facultyusername WHERE username='$user' AND password='$pwd'";
+        $sql="SELECT * FROM admin WHERE username='$user' AND password='$pwd'";
         $result=mysqli_query($conn,$sql) or die("Query failed!!");
         if(mysqli_num_rows($result)){
             $_SESSION['user_name']=$user;
-            header('Location: http://localhost/project.bca/faculty/facultyindex.php');
+            header('Location: http://localhost/project.bca\Menu-option\header.php');
             exit();
         }else{
             echo '<script type="text/javascript">';
@@ -50,10 +50,8 @@ session_start();
             echo '</script>';
         }
     }
-    ?>   
+    ?> 
     
-    
-
-    <?php include '../footer.php'; ?>
+    <?php include '../footer.php' ?>
 </body>
 </html>

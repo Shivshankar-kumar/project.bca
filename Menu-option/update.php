@@ -13,7 +13,7 @@
             <label>Id</label>
             <input type="text" name="sid" maxlength="2" placeholder="search id here" required>
         </div>
-        <input class="submit" type="submit" name="showbtn" value="Show" />
+        <input class="submit" type="submit" name="showbtn" value="Show">
     </form>
 <?php
 if(isset($_POST['showbtn'])){
@@ -23,7 +23,7 @@ if(isset($_POST['showbtn'])){
     $stu_id=$_POST['sid'];
  
 //Query for sql
-$sql="SELECT * FROM student WHERE sid = {$stu_id} ";
+$sql="SELECT * FROM student2 WHERE sid = {$stu_id} ";
 
 $result=mysqli_query($conn1,$sql) or die("Query failed..!");
 if(mysqli_num_rows($result) > 0){
@@ -36,16 +36,12 @@ if(mysqli_num_rows($result) > 0){
             <input type="text" name="name" value="<?php echo $row['Name']; ?>" maxlength="40" required>
         </div>
         <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="email" value="<?php echo $row['Email']; ?>" maxlength="30" required>
+        </div>
+        <div class="form-group">
             <label>Mobile</label>
             <input type="text" name="mobile" value="<?php echo $row['Mobile']; ?>" maxlength="10" required>
-        </div>
-        <div class="form-group">
-        <label>Age</label>
-        <input type="text" name="age" value="<?php echo $row['Age']; ?>" maxlength="3" required>
-        </div>
-        <div class="form-group">
-            <label>Address</label>
-            <input type="text" name="address" value="<?php echo $row['Address']; ?>" maxlength="100" required>
         </div>
         <div class="form-group">
         <?php    
@@ -67,6 +63,10 @@ if(mysqli_num_rows($result) > 0){
             echo "</select>";
         }
         ?>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="text" name="mobile" value="<?php echo $row['Password']; ?>" maxlength="30" required>
         </div>
     <input class="submit" type="submit" value="Update">
     </form>
