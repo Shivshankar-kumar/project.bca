@@ -9,7 +9,8 @@
 <body>
     <?php 
     include 'dashboard.php';
-    $conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connection failed".mysqli_connect_error());
+    
+    include '../connection.php';
     //get student id from URL bar
     $stu_id=$_GET['id'];
     $sql="SELECT *FROM studentmarks WHERE sid= {$stu_id}";

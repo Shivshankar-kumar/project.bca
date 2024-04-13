@@ -32,8 +32,7 @@ session_start();
     </form>
     <?php 
     // Establish a connection between php code and database
-    $conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connection failed".mysqli_connect_error());
-    
+    include '../connection.php';
     if(isset($_POST['login-btn'])){
         $user = $_POST['Username'];
         $pwd = $_POST['Password'];

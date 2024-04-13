@@ -21,7 +21,7 @@ include 'header.php'; ?>
 <?php
 if(isset($_POST['showbtn'])){
     //connect database
-    $conn1=mysqli_connect("localhost", "root", "","BCASTUDENT") or die("Connection failed!".mysqli_connect_error());
+    include '../connection.php';
     //to get id from url bar
     $stu_id=$_POST['sid'];
  

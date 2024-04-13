@@ -5,8 +5,7 @@ $email = $_POST['email'];
 $message = $_POST['message'];
 
 // Connection
-$conn = mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connection failed" . mysqli_connect_error());
-
+include 'connection.php';
 // Query
 $sql = "INSERT INTO feedback (Name, Mobile, Email, Message) VALUES ('$name', '$mobile', '$email', '$message')";
 $result = mysqli_query($conn, $sql);

@@ -11,8 +11,8 @@
     <?php 
     
     //database connectivity 
-    $conn=mysqli_connect("localhost", "root", "","BCASTUDENT") or die("Connection failed".mysqli_connect_error());
- $sql="SELECT *FROM facultyusername";
+    include '../connection.php';
+    $sql="SELECT *FROM facultyusername";
     $result=mysqli_query($conn, $sql);
     if(!$result){
         die("Query Unsuccessful!");

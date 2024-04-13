@@ -4,7 +4,7 @@ $f_id=$_POST['id'];
 $fuser_name=$_POST['username'];
 $f_password=$_POST['password'];
 //to connect with database
-$conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connect Failed..!".mysqli_connect_error());
+include '../connection.php';
 
 //Query for Update records
 $sql="UPDATE facultyusername SET username= '{$fuser_name}', Password= '{$f_password}' WHERE fid= {$f_id} ";

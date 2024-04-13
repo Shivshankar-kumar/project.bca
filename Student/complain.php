@@ -11,13 +11,7 @@
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Establish database connection
-    $servername = "localhost"; // Change this if your database is hosted elsewhere
-    $username = "root";
-    $password = "";
-    $dbname = "BCASTUDENT";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    include '../connection.php';
 
     // Check connection
     if ($conn->connect_error) {

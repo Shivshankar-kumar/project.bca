@@ -7,8 +7,7 @@ $s_mobile=$_POST['mobile'];
 $s_course=$_POST['course'];
 $s_password=$_POST['password'];
 //to connect with database
-$conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connect Failed..!".mysqli_connect_error());
-
+include '../connection.php';
 //Query for Update records
 $sql="UPDATE student2 SET Name= '{$s_name}', Email= '{$s_email}', Mobile= '{$s_mobile}', Course= '{$s_course}', Password= '{$s_password}' WHERE sid= {$s_id} ";
 mysqli_query($conn,$sql) or die("Query failed".mysqli_error());

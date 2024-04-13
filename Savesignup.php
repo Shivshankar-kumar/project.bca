@@ -1,7 +1,6 @@
 <?php
 // Connect to database
-$conn = mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connection failed!" . mysqli_connect_error());
-
+include 'connection.php';
 // Reconnect to MySQL
 if (!mysqli_ping($conn)) {
     die("Connection lost, please try again.");

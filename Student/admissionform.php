@@ -11,14 +11,8 @@
     // PHP code to handle form submission and database connection
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Database connection
-        $servername = "localhost"; // Change this if your database is hosted on a different server
-        $username = "root"; // Your database username
-        $password = ""; // Your database password
-        $dbname = "BCASTUDENT"; // Your database name
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
+        include '../connection.php';
+        
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);

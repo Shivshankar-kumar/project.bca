@@ -9,7 +9,7 @@
     <h2>Edit Student Marks</h2>
     <?php 
     // to build connection with database
-    $conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connection failed");
+    include '../connection.php';
     
     //get student id from URL bar
     $student_id=$_GET['id'];

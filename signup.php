@@ -43,8 +43,7 @@
                 
                 <?php
                 //to connect with database
-            $conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connection Error! ".mysqli_connect_error());
-
+                include 'connection.php';
             //Query to retreive Course name from studentclass
 
             $sql="SELECT * FROM studentclass";

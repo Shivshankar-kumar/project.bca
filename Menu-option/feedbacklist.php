@@ -8,8 +8,8 @@
     <?php 
     
     //database connectivity 
-    $conn=mysqli_connect("localhost", "root", "","BCASTUDENT") or die("Connection failed".mysqli_connect_error());
- $sql="SELECT *FROM feedback";
+    include '../connection.php';
+    $sql="SELECT *FROM feedback";
     $result=mysqli_query($conn, $sql);
     if(!$result){
         die("Query Unsuccessful!");

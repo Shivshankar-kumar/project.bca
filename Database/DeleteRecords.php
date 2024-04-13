@@ -1,9 +1,7 @@
 <?php
 //to take for update data from edit form
 $s_id=$_POST['sid'];
-//to connect with database
-$conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connect Failed..!".mysqli_connect_error());
-
+include '../connection.php';
 //Query for delete records
 $sql="DELETE FROM student2 WHERE sid = {$s_id} ";
 mysqli_query($conn,$sql) or die("Query failed".mysqli_error());

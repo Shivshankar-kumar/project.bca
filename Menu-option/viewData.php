@@ -8,7 +8,7 @@
     <?php 
     
     //database connectivity
-    $conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connection Error! ".mysqli_connect_error());
+    include '../connection.php';
     //query for JOIN two table
     $sql=" SELECT s.sid, s.Name, s.Email, s.Mobile, sc.coursename, s.Password 
     FROM student2 s INNER JOIN studentclass sc

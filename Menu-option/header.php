@@ -15,7 +15,7 @@ session_start();
     <!-- this php code is written for session if, user wants to access without login then this will redirect to login page -->
     <?php 
     //Establish a connection between php code and database
-    $conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connection failed".mysqli_connect_error());
+    include '../connection.php';
     error_reporting(0);
     $admin_profile=$_SESSION['user_name'];
 

@@ -11,7 +11,7 @@ include 'header.php';
     <h2>Update Faculty Confidential</h2>
     <?php 
     // to build connection with database
-    $conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connection failed");
+    include '../connection.php';
     
     //get faculty id from URL bar
     $f_id=$_GET['id'];

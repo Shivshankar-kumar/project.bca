@@ -11,7 +11,7 @@ include 'header.php';
     <h2>Update Record</h2>
     <?php 
     // to build connection with database
-    $conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connection failed");
+    include '../connection.php';
     
     //get student id from URL bar
     $stu_id=$_GET['id'];

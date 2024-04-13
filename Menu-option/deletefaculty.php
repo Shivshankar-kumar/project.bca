@@ -11,8 +11,7 @@ include 'header.php';
     <h2>Delete Confidential Information</h2>
     <?php 
     // to build connection with database
-    $conn=mysqli_connect("localhost", "root", "", "BCASTUDENT") or die("Connection failed");
-    
+    include '../connection.php';
     //get student id from URL bar
     $f_id=$_GET['id'];
 
